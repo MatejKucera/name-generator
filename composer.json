@@ -1,0 +1,27 @@
+{
+    "name": "matejkucera/name-generator",
+    "description": "Random name generator.",
+    "type": "library",
+    "keywords": ["name generator"],
+    "homepage": "https://github.com/matejkucera/name-generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MatejKucera",
+            "email": "matej.kucera@atlas.cz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "MatejKucera\\NameGenerator\\": "src/"
+        }
+    },
+	"require": {
+	    "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7",
+        "php-coveralls/php-coveralls": "^2"
+    }
+}
