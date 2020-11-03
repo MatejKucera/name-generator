@@ -9,7 +9,7 @@ final class BasicTest extends TestCase
     public function testSetLanguage(): void {
         // default
         $generator = new NameGenerator();
-        $this->assertEquals('en', $generator->getLanguage());
+        $this->assertEquals('cs', $generator->getLanguage());
 
         // by construct
         $generator = new NameGenerator('pl');

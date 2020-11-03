@@ -35,11 +35,7 @@ class NameGenerator
 
     public function name($gender = self::GENDER_RANDOM) {
         if($gender == self::GENDER_RANDOM) {
-            if(rand(0,1)) {
-                $gender = self::GENDER_MALE;
-            } else {
-                $gender = self::GENDER_FEMALE;
-            }
+            $gender = $this->randomGender();
         }        
 
         return $this->firstName($gender) . ' ' . $this->lastName($gender);
@@ -47,11 +43,7 @@ class NameGenerator
 
     public function firstName($gender = self::GENDER_RANDOM) {
         if($gender == self::GENDER_RANDOM) {
-            if(rand(0,1)) {
-                $gender = self::GENDER_MALE;
-            } else {
-                $gender = self::GENDER_FEMALE;
-            }
+            $gender = $this->randomGender();
         } 
 
         if($gender == self::GENDER_MALE) {
@@ -63,11 +55,7 @@ class NameGenerator
 
     public function lastName($gender = self::GENDER_RANDOM) {
         if($gender == self::GENDER_RANDOM) {
-            if(rand(0,1)) {
-                $gender = self::GENDER_MALE;
-            } else {
-                $gender = self::GENDER_FEMALE;
-            }    
+            $gender = $this->randomGender();
         } 
 
         if($gender == self::GENDER_MALE) {
@@ -88,6 +76,14 @@ class NameGenerator
             }
         }
         return $result;
+    }
+
+    private function randomGender() {
+        if(rand(0,1)) {
+            return self::GENDER_MALE;
+        } else {
+            return self::GENDER_FEMALE;
+        }   
     }
 
 }
