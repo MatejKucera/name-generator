@@ -25,15 +25,15 @@ class NameGenerator
     /**
      * TODO LANGUAGE NOT IMPLEMENTED YET
      */
-    public function setLanguage($language) {
+    public function setLanguage($language): void {
         $this->language = $language;
     }
 
-    public function getLanguage() {
+    public function getLanguage(): string {
         return $this->language;
     }
 
-    public function name($gender = self::GENDER_RANDOM) {
+    public function name($gender = self::GENDER_RANDOM): string {
         if($gender == self::GENDER_RANDOM) {
             $gender = $this->randomGender();
         }        
@@ -41,7 +41,7 @@ class NameGenerator
         return $this->firstName($gender) . ' ' . $this->lastName($gender);
     }
 
-    public function firstName($gender = self::GENDER_RANDOM) {
+    public function firstName($gender = self::GENDER_RANDOM): string {
         if($gender == self::GENDER_RANDOM) {
             $gender = $this->randomGender();
         } 
@@ -53,7 +53,7 @@ class NameGenerator
         }
     }
 
-    public function lastName($gender = self::GENDER_RANDOM) {
+    public function lastName($gender = self::GENDER_RANDOM): string {
         if($gender == self::GENDER_RANDOM) {
             $gender = $this->randomGender();
         } 
@@ -65,7 +65,7 @@ class NameGenerator
         }
     }
 
-    private function getFromFile($file) {
+    private function getFromFile($file): string {
         $json = json_decode(file_get_contents($file), true);
         $total = $json['total'];
         $random = rand(1, $total);
@@ -78,7 +78,7 @@ class NameGenerator
         return $result;
     }
 
-    private function randomGender() {
+    private function randomGender(): string {
         if(rand(0,1)) {
             return self::GENDER_MALE;
         } else {

@@ -20,7 +20,27 @@ composer require matejkucera/name-generator
 ## Usage
 
 ```
-#TODO
+use MatejKucera\NameGenerator\NameGenerator;
+
+$generator = new NameGenerator();
+
+// get full name
+$name = $generator->name();
+
+// get full female name
+$name = $generator->name(NameGenerator::GENDER_FEMALE);
+
+// get full male name
+$name = $generator->name(NameGenerator::GENDER_MALE);
+
+// get first name or last name only
+$name = $generator->firstName();
+$name = $generator->lastName();
+
+// you can use specific gender for first and last names
+$name = $generator->firstName(NameGenerator::GENDER_FEMALE);
+$name = $generator->lastName(NameGenerator::GENDER_MALE);
+
 ```
 
 ## Planned languages
@@ -29,3 +49,5 @@ composer require matejkucera/name-generator
 * German
 * Polish
 * Slovak
+
+
