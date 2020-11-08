@@ -66,7 +66,8 @@ class NameGenerator
     }
 
     private function getFromFile($file): string {
-        $json = json_decode(file_get_contents($file), true);
+	$path = dirname(__FILE__).'/../'.$file;
+        $json = json_decode(file_get_contents($path), true);
         $total = $json['total'];
         $random = rand(1, $total);
         $result = null;
